@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
-const Endpoint = `https://rickandmortyapi.com/api/character/`;
-
+const Endpoint = `https://rickandmortyapi.com/api/character`;
+export const config = {
+  runtime: 'nodejs', // or "edge"
+}
 export async function getServerSideProps() {
   const res = await fetch(Endpoint)
   const data = await res.json();
